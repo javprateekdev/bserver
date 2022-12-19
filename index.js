@@ -49,7 +49,7 @@ app.use((err, req, res, next) => {
 });
 app.use(cors());
 
-app.get("/flatdata", (req, resp) => {
+app.get("/data", (req, resp) => {
   pool2.query("select * from flatbased", (err, result) => {
     if (err) { resp.send("error in api") }
     else { resp.send(result) }
